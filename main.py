@@ -42,11 +42,20 @@ def median(array):
 
 
 # En çok tekrar edeni bulma
-def mode():
+def mode(array):
+    most = 0
+    returnvalue = 0
+    for i in range(len(array)):
+        count = 0
+        for j in range(len(array)):
+            if array[i] == array[j]:
+                count = count + 1
+        if count > most:
+            returnvalue = array[i]
+            most = count
+    return returnvalue
 
-    return 0
 
+speed = [99, 86, 87, 88, 111, 86, 103, 87, 94, 78, 77, 85, 86, 13, 31, 87, 87]
 
-speed = [99, 86, 87, 88, 111, 86, 103, 87, 94, 78, 77, 85, 86, 13, 31]
-
-print(median(speed))
+print(mode(speed))
